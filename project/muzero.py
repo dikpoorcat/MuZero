@@ -1,7 +1,8 @@
-from config import MuZeroConfig, make_cartpole_config
-from networks.shared_storage import SharedStorage
+# import keras
+from project.config import MuZeroConfig, make_cartpole_config
+from project.networks.shared_storage import SharedStorage
 from self_play.self_play import run_selfplay, run_eval
-from training.replay_buffer import ReplayBuffer
+from project.training.replay_buffer import ReplayBuffer
 from training.training import train_network
 
 

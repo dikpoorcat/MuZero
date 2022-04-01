@@ -1,6 +1,6 @@
-import tensorflow_core as tf
+import tensorflow as tf
 
-from networks.network import BaseNetwork, UniformNetwork, AbstractNetwork
+from project.networks.network import BaseNetwork, UniformNetwork, AbstractNetwork
 
 
 class SharedStorage(object):

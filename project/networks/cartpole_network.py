@@ -1,12 +1,12 @@
 import math
 
 import numpy as np
-from tensorflow_core.python.keras import regularizers
-from tensorflow_core.python.keras.layers.core import Dense
-from tensorflow_core.python.keras.models import Sequential
+from tensorflow.python.keras import regularizers
+from tensorflow.python.keras.layers.core import Dense
+from tensorflow.python.keras.models import Sequential
 
-from game.game import Action
-from networks.network import BaseNetwork
+from project.game.game import Action
+from project.networks.network import BaseNetwork
 
 
 class CartPoleNetwork(BaseNetwork):
@@ -47,7 +47,7 @@ class CartPoleNetwork(BaseNetwork):
 
         value = self._softmax(value_support)
         value = np.dot(value, range(self.value_support_size))
-        value = np.asscalar(value) ** 2
+        value = value.item() ** 2
         return value
 
     def _reward_transform(self, reward: np.array) -> float:

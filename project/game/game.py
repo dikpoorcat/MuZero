@@ -1,7 +1,7 @@
 from abc import abstractmethod, ABC
 from typing import List
 
-from self_play.utils import Node
+from project.self_play.utils import Node
 
 
 class Action(object):
