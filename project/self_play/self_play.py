@@ -1,7 +1,7 @@
 """Self-Play module: where the games are played."""
 
 from project.config import MuZeroConfig
-from project.game.game import AbstractGame
+from project.games.game import AbstractGame
 from project.networks.network import AbstractNetwork
 from project.networks.shared_storage import SharedStorage
 from project.self_play.mcts import run_mcts, select_action, expand_node, add_exploration_noise
@@ -32,9 +32,9 @@ def run_eval(config: MuZeroConfig, storage: SharedStorage, eval_episodes: int):
 
 def play_game(config: MuZeroConfig, network: AbstractNetwork, train: bool = True) -> AbstractGame:
     """
-    Each game is produced by starting at the initial board position, then
+    Each games is produced by starting at the initial board position, then
     repeatedly executing a Monte Carlo Tree Search to generate moves until the end
-    of the game is reached.
+    of the games is reached.
     """
     game = config.new_game()
     mode_action_select = 'softmax' if train else 'max'

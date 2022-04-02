@@ -5,7 +5,7 @@ from tensorflow.python.keras import regularizers
 from tensorflow.python.keras.layers.core import Dense
 from tensorflow.python.keras.models import Sequential
 
-from project.game.game import Action
+from project.games.game import Action
 from project.networks.network import BaseNetwork
 
 
@@ -51,7 +51,7 @@ class CartPoleNetwork(BaseNetwork):
         return value
 
     def _reward_transform(self, reward: np.array) -> float:
-        return np.asscalar(reward)
+        return reward.item()
 
     def _conditioned_hidden_state(self, hidden_state: np.array, action: Action) -> np.array:
         conditioned_hidden = np.concatenate((hidden_state, np.eye(self.action_size)[action.index]))

@@ -5,7 +5,7 @@ from project.self_play.utils import Node
 
 
 class Action(object):
-    """ Class that represent an action of a game."""
+    """ Class that represent an action of a games."""
 
     def __init__(self, index: int):
         self.index = index
@@ -58,7 +58,7 @@ class ActionHistory(object):
 
 class AbstractGame(ABC):
     """
-    Abstract class that allows to implement a game.
+    Abstract class that allows to implement a games.
     One instance represent a single episode of interaction with the environment.
     """
 
@@ -127,12 +127,12 @@ class AbstractGame(ABC):
 
     @abstractmethod
     def step(self, action) -> int:
-        """Execute one step of the game conditioned by the given action."""
+        """Execute one step of the games conditioned by the given action."""
         pass
 
     @abstractmethod
     def terminal(self) -> bool:
-        """Is the game is finished?"""
+        """Is the games is finished?"""
         pass
 
     @abstractmethod
@@ -142,5 +142,5 @@ class AbstractGame(ABC):
 
     @abstractmethod
     def make_image(self, state_index: int):
-        """Compute the state of the game."""
+        """Compute the state of the games."""
         pass

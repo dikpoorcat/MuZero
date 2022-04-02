@@ -5,7 +5,7 @@ from typing import Dict, List, Callable
 import numpy as np
 from tensorflow.python.keras.models import Model
 
-from project.game.game import Action
+from project.games.game import Action
 
 
 class NetworkOutput(typing.NamedTuple):
@@ -19,7 +19,7 @@ class NetworkOutput(typing.NamedTuple):
         return {Action(i): logit for i, logit in enumerate(policy_logits[0])}
 
 
-class AbstractNetwork(ABC):
+class AbstractNetwork(ABC):  # 抽象基类一般用于规定子类必须重新定义某些方法
 
     def __init__(self):
         self.training_steps = 0

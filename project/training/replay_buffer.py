@@ -3,7 +3,7 @@ from itertools import zip_longest
 from typing import List
 
 from project.config import MuZeroConfig
-from project.game.game import AbstractGame
+from project.games.game import AbstractGame
 
 
 class ReplayBuffer(object):
@@ -47,9 +47,9 @@ class ReplayBuffer(object):
         return batch
 
     def sample_games(self) -> List[AbstractGame]:
-        # Sample game from buffer either uniformly or according to some priority.
+        # Sample games from buffer either uniformly or according to some priority.
         return random.choices(self.buffer, k=self.batch_size)
 
     def sample_position(self, game: AbstractGame) -> int:
-        # Sample position from game either uniformly or according to some priority.
+        # Sample position from games either uniformly or according to some priority.
         return random.randint(0, len(game.history))

@@ -2,8 +2,8 @@ from typing import List
 
 import gym
 
-from project.game.game import Action, AbstractGame
-from project.game.gym_wrappers import ScalingObservationWrapper
+from project.games.game import Action, AbstractGame
+from project.games.gym_wrappers import ScalingObservationWrapper
 
 
 class CartPole(AbstractGame):
@@ -23,7 +23,7 @@ class CartPole(AbstractGame):
         return len(self.actions)
 
     def step(self, action) -> int:
-        """Execute one step of the game conditioned by the given action."""
+        """Execute one step of the games conditioned by the given action."""
 
         observation, reward, done, _ = self.env.step(action.index)
         self.observations += [observation]
@@ -31,7 +31,7 @@ class CartPole(AbstractGame):
         return reward
 
     def terminal(self) -> bool:
-        """Is the game is finished?"""
+        """Is the games is finished?"""
         return self.done
 
     def legal_actions(self) -> List[Action]:
@@ -39,5 +39,5 @@ class CartPole(AbstractGame):
         return self.actions
 
     def make_image(self, state_index: int):
-        """Compute the state of the game."""
+        """Compute the state of the games."""
         return self.observations[state_index]

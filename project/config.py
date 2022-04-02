@@ -3,8 +3,8 @@ from typing import Optional, Dict
 
 import tensorflow as tf
 
-from game.cartpole import CartPole
-from project.game.game import AbstractGame
+from games.cartpole import CartPole
+from project.games.game import AbstractGame
 from networks.cartpole_network import CartPoleNetwork
 from project.networks.network import BaseNetwork, UniformNetwork
 
